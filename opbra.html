@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8" />
+<head>
+    <title></title>
+    <link rel="stylesheet" href="opbra.css"/>
+    <script src="js/main.js"></script>
+    <script src="js/mineMålSide.js"></script>
+    <script src="js/evaluateScreen.js"></script>
+    <script src="js/ukentligEvaluering.js"></script>
+    <script src="js/dagligEvaluering.js"></script>
+    <script src="js/lagNyttMål.js"></script>
+    <script src="js/lagDagbok.js"></script>
+    <script src="js/kalender.js"></script>
+    <script src="js/ukentligEvalueringSideTO.js"></script>
+    <script src="js/ukentligEvalueringSideTRE.js"></script>
+    <script src="js/ukentligEvalueringSideFIRE.js"></script>
+    <script src="js/leggTilOppgaveSide.js"></script>
+</head>
+<body>
+    <div id="page">
+        <div id="menu"><button onclick="showMainScreen()">☰</button></div>
+        <div id="menu2"><button onclick="showMainScreen()">◀</button></div>
+        <div id="header"></div>
+        <div id="content"></div>
+    </div>
+    <script>
+        var header = document.getElementById('header');
+        var content = document.getElementById('content');
+        mainextra = document.getElementById('mainGoal');
+        showMainScreen();
+    </script>
+
+</body>
+</html>
