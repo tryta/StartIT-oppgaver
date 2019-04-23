@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<center>
+    <body>
+
+        <input id="sizeSlider" type="range" min="100" max="500" step="10" oninput="showDiv()" />
+        <br />
+        <input id="borderRadiusSlider" type="range" min="0" max="40" step="1" oninput="showDiv()" value="50%" />
+        <br />
+        <select id="colorChooser" onchange="showDiv()">
+            <option value="red">Red color</option>
+            <option selected value="green">Green color</option>
+            <option value="blue">Blue color</option>
+        </select>
+        <select id="borderChooser" onchange="showDiv()">
+            <option value="solid 5px black">Black Border</option>
+            <option value="solid 5px grey">Grey Border</option>
+            <option selected value="">No border</option>
+        </select>
+        <p>
+            <input id="textInput" type="text" oninput="showDiv()" value="endre teksten!" />
+        </p>
+        <div id="resultat"></div>
+        <div id="resultatHtml" style="font-family: monospace"></div>
+        <script>
+            var resultatDiv = document.getElementById('resultat');
+            var resultatHtmlDiv = document.getElementById('resultatHtml');
+            var sizeSlider = document.getElementById('sizeSlider');
+            var textInput = document.getElementById('textInput');
+            var colorChooser = document.getElementById('colorChooser');
+            var borderChooser = document.getElementById('borderChooser');
+            var radiusSlider = document.getElementById('borderRadiusSlider');
+
+            showDiv();
+
+            function showDiv() {
+                resultatDiv.innerHTML = '<div style="background-color: ' + colorChooser.value +
+                    ';border: ' + borderChooser.value + ';border-radius: ' + borderRadiusSlider.value +
+                    'px;width: ' + sizeSlider.value + 'px;height: ' + sizeSlider.value + 'px;">' +
+                    textInput.value + '</div>';
+                resultatHtmlDiv.innerText = resultatDiv.innerHTML;
+            }
+        </script>
+
+    </body>
+</center>
+</html>

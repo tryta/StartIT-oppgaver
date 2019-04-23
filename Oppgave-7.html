@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Oppgave 7</title>
+</head>
+<body>
+    <input id="høyde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="2" />
+    <input id="bredde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="2" />
+
+    <div id="resultat"></div>
+
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var høydeInput = document.getElementById('høyde');
+        var breddeInput = document.getElementById('bredde');
+
+        calculate();
+
+        function calculate() {
+            var høyde = parseInt(høydeInput.value);
+            var bredde = parseInt(breddeInput.value);
+            var areal = høyde * bredde;
+            var omkrets = 2 * høyde + 2 * bredde;
+            resultatDiv.innerHTML = '' +
+                høyde + '*' + bredde + '=' + areal + '</br>' +
+            høyde + '+' + bredde + '=' + omkrets;
+        }
+    </script>
+</body>
+</html>

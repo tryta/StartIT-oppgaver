@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <h2>Dra over rad 1, 3 og 5 for å se resultat!</h2>
+    <table>
+        <tr><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td></tr>
+        <tr><td>o</td><td>o</td><td>o</td><td>o</td><td>o</td><td>o</td><td>o</td><td>o</td></tr>
+        <tr><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td></tr>
+        <tr><td>o</td><td>o</td><td>o</td><td>o</td><td>o</td><td>o</td><td>o</td><td>o</td></tr>
+        <tr><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td><td onmouseover="change(this)">o</td></tr>
+    </table>
+    <script>
+        function change(OtilX) {
+            OtilX.innerHTML = 'x';
+        }
+    </script>
+
+    <h3>Klikk på navn, alder, bosted og hobby for å se resultat!</h3>
+    <h4 onclick="byttnavn(this)">Navn:</h4>
+    <h4 onclick="byttalder(this)">Alder:</h4>
+    <h4 onclick="byttsted(this)">Bosted:</h4>
+    <h4 onclick="bytthobby(this)">Hobby:</h4>
+
+    <script>
+        function byttnavn(navn) {
+            navn.innerHTML = 'Alex';
+        }
+    </script>
+
+    <script>
+        function byttalder(alder) {
+            alder.innerHTML = '26';
+        }
+    </script>
+
+    <script>
+        function byttsted(sted) {
+            sted.innerHTML = 'Kragerø';
+        }
+    </script>
+
+    <script>
+        function bytthobby(hobby) {
+            hobby.innerHTML = 'Fiske og koding';
+        }
+    </script>
+
+</body>
+</html>

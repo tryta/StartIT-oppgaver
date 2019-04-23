@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Oppgave 9B</title>
+</head>
+<style>
+    .lock {
+        background: #333333;
+        width: 150px;
+        display: grid;
+        grid-template-columns: 50px 50px 50px;
+        grid-template-rows: 50px 50px 50px 50px;
+        grid-template-areas: 'en to tre' 'fire fem seks' 'syv åtte ni' ' null blank tilbake';
+        margin: auto;
+        border: solid black 2px;
+    }
+</style>
+<body>
+    <center>
+        <h1>Kodelås</h1>
+        <p>Prøv koden 5548 ;)</p>
+        <div id="tallrekke">Tall som er blitt trykket på:</div></br>
+        <div id="tallSomErTrykketPå"></div></br>
+        </br>
+        <div class="lock">
+
+            <button onclick="trykk(this)">1</button>
+            <button onclick="trykk(this)">2</button>
+            <button onclick="trykk(this)">3</button>
+            <button onclick="trykk(this)">4</button>
+            <button onclick="trykk(this)">5</button>
+            <button onclick="trykk(this)">6</button>
+            <button onclick="trykk(this)">7</button>
+            <button onclick="trykk(this)">8</button>
+            <button onclick="trykk(this)">9</button>
+            <button onclick="trykk(this)">0</button>
+            <div></div>
+            <button class="tall tilbake" onclick="trykk2(this)">&#8634</button>
+
+        </div>
+
+        <script>
+            var correctCode = '5548';
+            var enteredSoFar = '';
+            function trykk(element) {
+                document.getElementById('tallSomErTrykketPå').innerHTML += element.innerHTML;
+                enteredSoFar = document.getElementById('tallSomErTrykketPå').innerHTML;
+                if (enteredSoFar == '5548') {
+                    alert('Koden er riktig. Låsen er Åpen!');
+                }
+                if (!correctCode.startsWith(enteredSoFar)) {
+                    enteredSoFar = '';
+                    alert('Feil!');
+                }
+            }
+            function trykk2() {
+                document.getElementById('tallSomErTrykketPå').innerHTML = ''
+                document.getElementById('Koden er riktig. Kista er nå Åpen!').innerHTML = ''
+                isGameFinished = false
+            }
+        </script>
+    </center>
+</body>
+</html>

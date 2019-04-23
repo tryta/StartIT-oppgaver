@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Oppgave 5</title>
+</head>
+<center>
+    <body onload="visesNårSidenLastes()">
+        <div id="lastes"></div>
+        <button onclick="visesNårSidenTrykkes()" id="trykkes">Trykk for tid og dato</button>
+        <div>
+            <img width="600" height="400" src="solnedgang.jpg" />
+        </div>
+        <script>
+            function visesNårSidenLastes() {
+                document.getElementById('lastes').innerHTML = 'Tid og dato' + new Date().toTimeString();
+            }
+            function visesNårSidenTrykkes() {
+                document.getElementById('trykkes').innerHTML = "Ny dag, nye muligheter." + new Date().toTimeString();
+            }
+        </script>
+    </body>
+</center>
+</html>

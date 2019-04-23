@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Kodelås</title>
+    <style>
+        .lock {
+            font-size: 140%;
+            background: #000;
+            width: 210px;
+            display: grid;
+            grid-template-columns: 70px 70px 70px;
+            grid-template-rows: 70px 70px 70px 70px;
+            grid-template-areas: 'en to tre' 'fire fem seks' 'syv åtte ni' ' null tilbake';
+            margin: auto;
+            border: solid black 2px;
+        }
+
+        .tall {
+            cursor: pointer;
+            padding: 10px;
+            color: #261226;
+            text-align: center;
+            font-size: 200%;
+        }
+
+        .svar {
+            color: black;
+            border: solid black 2px;
+            margin: auto;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lock">
+        <button id="one" class="tall en" onclick="knapp(this)">1</button>
+        <button id="two" class="tall to" onclick="knapp(this)">2</button>
+        <button id="three" class="tall tre" onclick="knapp(this)">3</button>
+        <button id="four" class="tall fire" onclick="knapp(this)">4</button>
+        <button id="five" class="tall fem" onclick="knapp(this)">5</button>
+        <button id="six" class="tall seks" onclick="knapp(this)">6</button>
+        <button id="seven" class="tall syv" onclick="knapp(this)">7</button>
+        <button id="eight" class="tall åtte" onclick="knapp(this)">8</button>
+        <button id="nine" class="tall ni" onclick="knapp(this)">9</button>
+        <div id="close" class="closing" onClick="javascript:close_clip()"><img src="bart.jpg" /></div>
+        <button id="zero" class="tall null" onclick="knapp(this)">0</button>
+        <button class="tall tilbake" onclick="knepp(this)">&#8634</button>
+    </div>
+    <br />
+    <center>
+        <button id="kode" class="tall svar"></button>
+        <button id="riktig" class="tall svar"></button>
+    </center>
+</body>
+<script>
+    var isGameFinished = false
+    var kode = document.getElementById('kode')
+
+    function knapp(element) {
+        if (isGameFinished == true) { return }
+        document.getElementById('kode').innerHTML += element.innerHTML
+        if (kode.innerHTML == '6629') {
+            var right = document.getElementById('riktig')
+            right.innerHTML = 'Riktig'
+            isGameFinished = true
+        }
+
+    }
+    function knepp() {
+        document.getElementById('kode').innerHTML = ''
+        document.getElementById('riktig').innerHTML = ''
+        isGameFinished = false
+    }
+</script>
+</html>

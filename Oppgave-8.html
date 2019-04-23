@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Oppgave 8</title>
+    <style>
+        .background {
+            background-color: darkslategrey;
+        }
+        .air {
+            padding: 15px 15px;
+        }
+        .leftside {
+            text-align: left;
+        }
+        .border {
+            border: 5px solid orange;
+        }
+        .color {
+            color: red;
+        }
+        .selected::before {
+            content: "🡆";
+            color: blue;
+        }
+        .selected::after {
+            content: "🡄";
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div onclick="select(this)" id="changes1">Se hva som skjer</div>
+        <br />
+        <div onclick="select(this)" id="changes2">Trykk på knapp 1, 2, 3, 4, eller 5</div>
+        <br />
+        <input id="chk1" type="checkbox" onchange="toggleStyle1()" />
+        <input id="chk2" type="checkbox" onchange="toggleStyle2()" />
+        <input id="chk3" type="checkbox" onchange="toggleStyle3()" />
+        <input id="chk4" type="checkbox" onchange="toggleStyle4()" />
+        <input id="chk5" type="checkbox" onchange="toggleStyle5()" />
+    </center>
+    <script>
+        var selected = document.getElementById('changes1');
+        selected.classList.add('selected');
+        function select(newSelected) {
+            selected.classList.remove('selected');
+            newSelected.classList.add('selected');
+            selected = newSelected;
+        }
+        function toggleStyle1() {
+            var isChecked = document.getElementById('chk1').checked;
+            selected.classList.toggle('background', isChecked);
+            document.getElementById('chk1').checked = selected.classList.contains('background');
+
+        }
+        function toggleStyle2() {
+            var isChecked = document.getElementById('chk2').checked;
+            selected.classList.toggle('air', isChecked);
+            document.getElementById('chk2').checked = selected.classList.contains('air');
+        }
+        function toggleStyle3() {
+            var isChecked = document.getElementById('chk3').checked;
+            selected.classList.toggle('leftside', isChecked);
+            document.getElementById('chk3').checked = selected.classList.contains('leftside');
+        }
+        function toggleStyle4() {
+            var isChecked = document.getElementById('chk4').checked;
+            selected.classList.toggle('border', isChecked);
+            document.getElementById('chk4').checked = selected.classList.contains('border');
+        }
+        function toggleStyle5() {
+            var isChecked = document.getElementById('chk5').checked;
+            selected.classList.toggle('color', isChecked);
+            document.getElementById('chk5').checked = selected.classList.contains('color');
+        }       
+    </script>
+
+</body>
+</html>

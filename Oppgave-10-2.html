@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Oppgave-10-2</title>
+    <style>
+    </style>
+</head>
+<body onload="test('grey')">
+    <p>Ferdighet 2a - Alternative eventhandlere: onchange osv.</p>
+    <input type="text" onchange="test('blue')" oninput="test('lightblue')" />
+    <h3 onmouseover="test('pink')" onmouseout="test('lightyellow')">Test test test</h3>
+    <h2 id="info"></h2>
+
+    <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">Mer informasjon her</a>
+    <script>
+        var infoDiv = document.getElementById('info');
+        function test(color) {
+            document.getElementById('info').innerHTML += '<li>done</li>';
+            var backgroundColorStyle = 'background-color: ' + color + ';';
+            var style = 'style="' + backgroundColorStyle + '"';
+            infoDiv.innerHTML = '<div ' + style + '>' + infoDiv.innerHTML + '</div>';
+        }
+       
+    </script>
+</body>
+</html>

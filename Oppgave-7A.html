@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Oppgave7A</title>
+    <style>
+        .svar {
+            margin: 7em;
+            background-color: grey;
+            border-width: 5px;
+            border-style: double;     
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <div id="resultat" class="svar"></div>
+
+        <script>
+
+            var reultat = document.getElementById('resultat');
+
+            showDiv();
+
+            function showDiv() {
+
+                var tall1 = 100 + Math.floor(Math.random() * 500);
+                var tall2 = 100 + Math.floor(Math.random() * 500);
+                var areal = tall1 * tall2;
+                var omkrets = 2 * tall1 + 2 * tall2;
+
+                var width = 'width:' + tall1 + 'px; ';
+                var height = 'height:' + tall2 + 'px;';
+                var stille = width + height;
+                resultat.setAttribute("style", stille);
+                resultat.innerHTML = 'Bredde: ' + tall1 + '<br/>'
+                    + 'Høyde: ' + tall2 + '<br/>'
+                    + 'Areal: ' + areal + '<br/>'
+                    + 'Omkrets: ' + omkrets;
+
+
+            }
+        </script>
+    </center>
+</body>
+</html>
